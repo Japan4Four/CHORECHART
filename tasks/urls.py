@@ -4,4 +4,7 @@ from . import views
 
 urlpatterns = [
     url(r'^$', views.index, name='index'),
+
+    # Make the regex below match /task_list/
     url(r'^$', views.task_list, name='task_list')
+    # Broken list
