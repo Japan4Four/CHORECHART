@@ -6,7 +6,7 @@ class Person(models.Model):
     person_id: unique identifier for the person.
     person_text: text (name) of the person
     """
-    person_id = models.IntegerField(default=0)
+    person_id = models.CharField(max_length=100, blank=True, unique=True, default=uuid.uuid4)
     person_text = models.CharField(max_length=200)
     
 
