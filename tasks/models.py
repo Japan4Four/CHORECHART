@@ -9,6 +9,10 @@ class Person(models.Model):
     """
     person_id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
     person_text = models.CharField(max_length=200)
+
+    def __str__(self):
+        """Returns the Person text (name)."""
+        return self.person_text
     
 
 class Task(models.Model):
@@ -25,3 +29,7 @@ class Task(models.Model):
     assignee = models.ForeignKey(Person, on_delete=models.CASCADE)
     due_date = models.DateTimeField('date due')
     complete_date = models.DateTimeField('date complete')
+
+    def __str__(self):
+        """Returns the task text."""
+        return self.task_text

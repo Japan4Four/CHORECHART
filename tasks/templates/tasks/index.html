@@ -1,11 +1,11 @@
 {% if available_tasks %}
     <ul>
     {% for task in available_tasks %}
-        <li><a href="/tasks/{{ task.task_text }}/">{{ task.task_text }}</a></li>
-        <li><a href="/tasks/{{ task.priority }}/">{{ task.priority }}</a></li>
-        <li><a href="/tasks/{{ task.assignee }}/">{{ task.assignee }}</a></li>
-        <li><a href="/tasks/{{ task.due_date }}/">{{ task.due_date }}</a></li>
-        <li><a href="/tasks/{{ task.complete_date }}/">{{ task.complete_date }}</a></li>
+        <li><a href="/tasks/{{ task.task_text }}/">{{ task.task_text }}</a>
+        <a href="/tasks/{{ task.priority }}/">{{ task.priority }}</a>
+        <a href="/tasks/{{ task.assignee }}/">{{ task.assignee }}</a>
+        <a href="/tasks/{{ task.due_date }}/">{{ task.due_date }}</a>
+        <a href="/tasks/{{ task.complete_date }}/">{{ task.complete_date }}</a></li>
     {% endfor %}
     </ul>
 {% else %}
