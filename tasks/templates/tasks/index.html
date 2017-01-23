@@ -1,36 +1,36 @@
 {% if available_tasks %}
-<style type="text/css">
-  table, th, td {
-    border: 1px solid black;
-  }
-
-</style>
+<link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/pure/0.6.2/pure-min.css">
     <div>
     {% for task in available_tasks %}
-        <table style="width: 100%">
-          <tr>
-            <th>NAME</th>
-            <th>TASK</th>
-            <th>PRIORITY</th>
-            <th>DUE BY</th>
-            <th>COMPLETE BY</th>
-          </tr>
-          <tr>
-            <td>
-              <a href="/tasks/{{ task.assignee }}/">{{ task.assignee }}</a>
-            </td>
-            <td>  
-              <a href="/tasks/{{ task.task_text }}/">{{ task.task_text }}</a>
-            </td>
-            <td style="text-align: center;">
-              <a href="/tasks/{{ task.priority }}/">{{ task.priority }}</a>
-            </td>
-            <td>  
-              <a href="/tasks/{{ task.due_date }}/">{{ task.due_date }}</a>
-            </td>
-            <td>  
-              <a href="/tasks/{{ task.complete_date }}/">{{ task.complete_date }}</a>
-            </td>  
+        <table class="pure-table">
+          <thead>
+            <tr>
+              <th>NAME</th>
+              <th>TASK</th>
+              <th>PRIORITY</th>
+              <th>DUE BY</th>
+              <th>COMPLETE BY</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <a href="/tasks/{{ task.assignee }}/">{{ task.assignee }}</a>
+              </td>
+              <td>  
+                <a href="/tasks/{{ task.task_text }}/">{{ task.task_text }}</a>
+              </td>
+              <td>
+                <a href="/tasks/{{ task.priority }}/">{{ task.priority }}</a>
+              </td>
+              <td>  
+                <a href="/tasks/{{ task.due_date }}/">{{ task.due_date }}</a>
+              </td>
+              <td>  
+                <a href="/tasks/{{ task.complete_date }}/">{{ task.complete_date }}</a>
+              </td>
+            </tr>
+          </tbody>      
         </table>
     {% endfor %}
     </div>
