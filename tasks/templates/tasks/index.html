@@ -1,13 +1,39 @@
 {% if available_tasks %}
-    <ul>
+<style type="text/css">
+  table, th, td {
+    border: 1px solid black;
+  }
+
+</style>
+    <div>
     {% for task in available_tasks %}
-        <li><a href="/tasks/{{ task.task_text }}/">{{ task.task_text }}</a>
-        <a href="/tasks/{{ task.priority }}/">{{ task.priority }}</a>
-        <a href="/tasks/{{ task.assignee }}/">{{ task.assignee }}</a>
-        <a href="/tasks/{{ task.due_date }}/">{{ task.due_date }}</a>
-        <a href="/tasks/{{ task.complete_date }}/">{{ task.complete_date }}</a></li>
+        <table style="width: 100%">
+          <tr>
+            <th>NAME</th>
+            <th>TASK</th>
+            <th>PRIORITY</th>
+            <th>DUE BY</th>
+            <th>COMPLETE BY</th>
+          </tr>
+          <tr>
+            <td>
+              <a href="/tasks/{{ task.assignee }}/">{{ task.assignee }}</a>
+            </td>
+            <td>  
+              <a href="/tasks/{{ task.task_text }}/">{{ task.task_text }}</a>
+            </td>
+            <td style="text-align: center;">
+              <a href="/tasks/{{ task.priority }}/">{{ task.priority }}</a>
+            </td>
+            <td>  
+              <a href="/tasks/{{ task.due_date }}/">{{ task.due_date }}</a>
+            </td>
+            <td>  
+              <a href="/tasks/{{ task.complete_date }}/">{{ task.complete_date }}</a>
+            </td>  
+        </table>
     {% endfor %}
-    </ul>
+    </div>
 {% else %}
     <p>No tasks are available.</p>
 {% endif %}
